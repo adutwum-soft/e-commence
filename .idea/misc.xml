@@ -3,7 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/boarder_button.xml" value="0.24635416666666668" />
+        <entry key="app/src/main/res/drawable/boarder_circular.xml" value="0.24635416666666668" />
+        <entry key="app/src/main/res/drawable/ic_identity_24.xml" value="0.24635416666666668" />
+        <entry key="app/src/main/res/drawable/show_password_selector.xml" value="0.24635416666666668" />
+        <entry key="app/src/main/res/drawable/splash_bg.xml" value="0.24635416666666668" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.32653985507246375" />
+        <entry key="app/src/main/res/layout/login.xml" value="0.21614583333333334" />
       </map>
     </option>
   </component>

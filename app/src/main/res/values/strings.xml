@@ -1,4 +1,15 @@
 <resources>
     <string name="app_name">e-commence</string>
     <string name="cart">Cart</string>
+
+    <string name="login">Log In</string>
+    <string name="phone">Phone number</string>
+    <string name="pass">Password</string>
+    <string name="rememberMe">Remember me</string>
+    <string name="don_t_have_account">Don\'t have an account?</string>
+
+    <string name="signup">Sign Up</string>
+    <string name="email">Email</string>
+    <string name="conPass">Confirm Password</string>
+    <string name="already_have_account">Already have an account?</string>
 </resources>
