@@ -3,6 +3,7 @@ package com.example.e_commence
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.example.e_commence.utils.Services
 import com.example.e_commence.utils.SessionManager
 
 class MainActivity : AppCompatActivity() {
@@ -25,5 +26,9 @@ class MainActivity : AppCompatActivity() {
         }else{
             this.showToast("please check your internet")
         }
+    }
+
+    companion object{
+        var services: Services? = null
     }
 }
