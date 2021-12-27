@@ -11,6 +11,11 @@
         android:icon="@drawable/ic_shopping_bag_24"
         />
     <item
+        android:id="@+id/history"
+        android:title="@string/history"
+        android:icon="@drawable/ic_history_24"
+        />
+    <item
         android:id="@+id/settings"
         android:title="@string/setting"
         android:icon="@drawable/ic_settings_24"
