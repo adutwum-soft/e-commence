@@ -3,6 +3,7 @@
     <string name="cart">Cart</string>
 
     <string name="login">Log In</string>
+    <string name="signin">Sign in</string>
     <string name="phone">Phone number</string>
     <string name="pass">Password</string>
     <string name="rememberMe">Remember me</string>
@@ -14,4 +15,5 @@
     <string name="already_have_account">Already have an account?</string>
 
     <string name="somethingError">Something went wrong</string>
+    <string name="fullname">Full name</string>
 </resources>

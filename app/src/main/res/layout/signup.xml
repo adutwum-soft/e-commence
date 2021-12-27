@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Login"
+    tools:context=".Signup"
     android:background="@color/darkBlue"
     >
 
@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
         android:layout_marginTop="50dp"
-        android:text="@string/login"
+        android:text="@string/signup"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:textSize="32sp"
@@ -23,58 +23,70 @@
         />
 
     <EditText
-        android:id="@+id/phone"
+        android:id="@+id/fullName"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/loginTxt"
-        android:inputType="phone"
-        android:hint="@string/phone"
-        android:textColorHint="@color/white50"
-        android:textColor="@color/white50"
         android:background="@drawable/boarder_circular"
+        android:hint="@string/fullname"
+        android:textColorHint="@color/white50"
         android:paddingLeft="20dp"
-        android:layout_marginTop="30dp"
-        android:drawableLeft="@drawable/ic_person_24"
-        android:drawablePadding="8dp"
+        android:inputType="text"
         />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/email"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fullName"
         android:background="@drawable/boarder_circular"
-        android:drawableLeft="@drawable/ic_lock_24"
-        android:drawablePadding="8dp"
+        android:layout_marginTop="20dp"
+        android:hint="@string/email"
+        android:textColorHint="@color/white50"
+        android:paddingLeft="20dp"
+        />
+
+    <EditText
+        android:id="@+id/pass"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginHorizontal="20dp"
+        android:background="@drawable/boarder_circular"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/email"
         android:hint="@string/pass"
         android:paddingLeft="20dp"
         android:textColorHint="@color/white50"
+        android:layout_marginTop="20dp"
+        />
+    <EditText
+        android:id="@+id/conPass"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginHorizontal="20dp"
+        android:background="@drawable/boarder_circular"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/phone"
-        app:passwordToggleEnabled="true" />
-
-    <CheckBox
-        android:id="@+id/checkBox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="8dp"
-        android:text="@string/rememberMe"
-        android:textColor="@color/white50"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
+        app:layout_constraintTop_toBottomOf="@+id/pass"
+        android:hint="@string/pass"
+        android:paddingLeft="20dp"
+        android:textColorHint="@color/white50"
+        android:layout_marginTop="20dp"
+        />
 
     <RelativeLayout
-        android:id="@+id/loginBtn"
+        android:id="@+id/signUpBtn"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox"
+        app:layout_constraintTop_toBottomOf="@+id/conPass"
         android:layout_marginHorizontal="20dp"
         android:background="@drawable/boarder_button"
         android:layout_marginTop="30dp"
@@ -84,7 +96,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="Log in"
+            android:text="Sign up"
             android:textColor="@color/white"
             android:textSize="18sp"
             android:textStyle="bold"
@@ -99,22 +111,22 @@
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
+        app:layout_constraintStart_toStartOf="parent"
+        >
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/don_t_have_account"
+            android:text="@string/already_have_account"
             android:textColor="@color/white50"
             android:textSize="19sp"
             />
 
         <TextView
-            android:id="@+id/signUpBtn"
+            android:id="@+id/signInBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
-            android:text="@string/signup"
+            android:text="@string/signin"
             android:textColor="@color/brightRed"
             android:textSize="19sp"
             />
