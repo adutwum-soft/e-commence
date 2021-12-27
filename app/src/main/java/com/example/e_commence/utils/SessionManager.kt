@@ -27,6 +27,12 @@ class SessionManager(context: Context) {
         editor.apply()
     }
 
+    fun saveBadge(number: Int){
+        val editor = cart.edit()
+        editor.putInt(BADGE,number)
+        editor.apply()
+    }
+
     fun clearBadge(){
         val editor = cart.edit()
         editor.clear()

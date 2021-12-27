@@ -11,14 +11,14 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-//        setContentView(R.layout.activity_main)
 
         sessionManager = SessionManager(this)
+        services = Services(this)
 
         if (applicationContext.isNetworkConnected()){
             if (sessionManager.isLoggedIn()) {
-//                startActivity(Intent(this, Home::class.java))
-//                finish()
+                startActivity(Intent(this, Home::class.java))
+                finish()
             }else{
                 startActivity(Intent(this, Login::class.java))
                 finish()
