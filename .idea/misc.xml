@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/drawable/boarder_button.xml" value="0.24635416666666668" />
+        <entry key="app/src/main/res/drawable/boarder_category.xml" value="0.24635416666666668" />
         <entry key="app/src/main/res/drawable/boarder_circular.xml" value="0.24635416666666668" />
         <entry key="app/src/main/res/drawable/bottom_nav_boarder.xml" value="0.24635416666666668" />
         <entry key="app/src/main/res/drawable/bottom_nav_state.xml" value="0.24635416666666668" />

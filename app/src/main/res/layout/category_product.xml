@@ -3,16 +3,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragment.CategoryProduct"
     android:background="@color/white"
-    android:orientation="vertical"
-    >
+    android:orientation="vertical">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolBar"
         android:layout_width="match_parent"
         android:layout_height="?android:attr/actionBarSize"
         android:background="@color/white"
+        android:contentInsetStart="0dp"
+        app:contentInsetStartWithNavigation="0dp"
         />
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/productRecy"

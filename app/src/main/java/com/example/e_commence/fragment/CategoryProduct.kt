@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.e_commence.Home
 import com.example.e_commence.MainActivity
+import com.example.e_commence.R
 import com.example.e_commence.adapter.ProductAdapter
 import com.example.e_commence.databinding.CategoryProductBinding
 import com.example.e_commence.utils.Services
@@ -33,9 +34,16 @@ class CategoryProduct : Fragment() {
         // Inflate the layout for this fragment
         _binding = CategoryProductBinding.inflate(inflater, container, false)
 
-        home?.setSupportActionBar(binding.toolBar)
-        binding.toolBar.setNavigationOnClickListener{
-            home?.navigate(home?.itemsHome!!)
+        with(binding){
+            home?.setSupportActionBar(toolBar)
+            val actionBar = home?.supportActionBar
+            if (actionBar != null){
+                actionBar.setDisplayHomeAsUpEnabled(true)
+                actionBar.setHomeAsUpIndicator(R.drawable.ic_back_ios_24)
+            }
+            toolBar.setNavigationOnClickListener{
+                home?.navigate(home?.itemsHome!!)
+            }
         }
 
         init()
