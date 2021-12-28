@@ -15,7 +15,9 @@
         android:theme="@style/Theme.Ecommence">
         <activity
             android:name=".Home"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait"
+            />
         <activity
             android:name=".Signup"
             android:exported="false"

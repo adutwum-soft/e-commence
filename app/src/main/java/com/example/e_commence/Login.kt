@@ -1,9 +1,9 @@
 package com.example.e_commence
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import com.example.e_commence.databinding.LoginBinding
 import com.example.e_commence.model.User
 import com.example.e_commence.utils.Constants
@@ -18,7 +18,7 @@ class Login : AppCompatActivity() {
     private lateinit var binding: LoginBinding
     lateinit var sessionManager: SessionManager
     var services: Services? = null
-    var rem: Boolean = false
+//    var rem: Boolean = false
 
     private val okHttpClient = OkHttpClient()
 
@@ -39,7 +39,7 @@ class Login : AppCompatActivity() {
             }
 
             checkBox.setOnCheckedChangeListener { _, isChecked ->
-                rem = isChecked
+                services?.rem = isChecked
             }
         }
     }
@@ -76,7 +76,7 @@ class Login : AppCompatActivity() {
                                 if (json.has("token")){
                                     services?.user = User.fromJson(json)
 
-                                    if (rem){
+                                    if (services?.rem == true){
                                         sessionManager.saveUserData(services?.user!!)
                                         sessionManager.saveUserToken(services?.user?.token!!)
                                     }

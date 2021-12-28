@@ -1,7 +1,7 @@
 package com.example.e_commence.api
 
 import com.example.e_commence.R
-import com.example.e_commence.utils.SessionManager
+import com.example.e_commence.utils.Services
 import io.reactivex.Observable
 import io.reactivex.ObservableEmitter
 import okhttp3.*
@@ -51,14 +51,14 @@ class Network {
             }
         }
 
-        fun getRequest(url: String, ok: OkHttpClient, sessionManager: SessionManager): Observable<JSONArray> {
+        fun getRequest(url: String, services: Services): Observable<JSONArray> {
             logRequest(url)
             val request = Request.Builder()
-                .addHeader("Authorization", "Bearer ${sessionManager.getUserToken()}")
+                .addHeader("Authorization", "Bearer ${services.tokenCheck()}")
                 .url(url)
                 .build()
             return Observable.create { emitter: ObservableEmitter<JSONArray> ->
-                ok.newCall(request).enqueue(object: Callback {
+                services.client.newCall(request).enqueue(object: Callback {
                     override fun onFailure(call: Call, e: IOException) {
                         e.printStackTrace()
                     }

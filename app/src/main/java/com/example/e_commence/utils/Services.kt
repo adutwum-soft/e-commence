@@ -24,6 +24,7 @@ class Services {
     var cart: Cart? = null
     var order: Order? = null
     var totalAmount = 0.0
+    var rem = false
 
     var client = OkHttpClient()
 
@@ -33,7 +34,7 @@ class Services {
 
     fun products(): Observable<String> {
         val request = Request.Builder()
-            .addHeader("Authorization", "Bearer ${mainActivity?.sessionManager?.getUserToken()}")
+            .addHeader("Authorization", "Bearer ${tokenCheck()}")
             .url(Constants.products)
             .build()
         return Observable.create { emitter: ObservableEmitter<String> ->
@@ -56,9 +57,22 @@ class Services {
         }
     }
 
+    fun tokenCheck(): String{
+        var token = when {
+            mainActivity?.sessionManager!!.isRem() ->{
+                mainActivity?.sessionManager?.getUserToken().toString()
+            }else ->{
+                user?.token!!
+            }
+        }
+        print(">>> TOKEN >>> $token")
+        return token
+    }
+
     fun viewCart(): Observable<String>{
+
         val request = Request.Builder()
-            .addHeader("Authorization", "Bearer ${mainActivity?.sessionManager?.getUserToken()}")
+            .addHeader("Authorization", "Bearer ${tokenCheck()}")
             .url(Constants.viewCart)
             .build()
         return Observable.create { emitter: ObservableEmitter<String> ->
@@ -71,6 +85,7 @@ class Services {
                 @Throws(IOException::class)
                 override fun onResponse(call: Call, response: Response) {
                     val data = response.body!!.string()
+                    println(">>> DATA >>> $data")
                     val result = JSONObject(data)
                     println(result)
 
@@ -87,7 +102,7 @@ class Services {
 
     fun viewHistory(): Observable<String>{
         val request = Request.Builder()
-            .addHeader("Authorization", "Bearer ${mainActivity?.sessionManager?.getUserToken()}")
+            .addHeader("Authorization", "Bearer ${tokenCheck()}")
             .url(Constants.history)
             .build()
         return Observable.create { emitter: ObservableEmitter<String> ->
@@ -110,7 +125,7 @@ class Services {
 
     fun searchProduct(searchData: String): Observable<String>{
         val request = Request.Builder()
-            .addHeader("Authorization", "Bearer ${mainActivity?.sessionManager?.getUserToken()}")
+            .addHeader("Authorization", "Bearer ${tokenCheck()}")
             .url(Constants.search+searchData)
             .build()
 
@@ -140,7 +155,7 @@ class Services {
     fun checkout(): Observable<String>{
         val body = ""
         val request = Request.Builder()
-            .addHeader("Authorization", "Bearer ${mainActivity?.sessionManager?.getUserToken()}")
+            .addHeader("Authorization", "Bearer ${tokenCheck()}")
             .url(Constants.checkout)
             .post(body.toRequestBody())
             .build()
@@ -174,7 +189,7 @@ class Services {
             .build()
 
         val request = Request.Builder()
-            .addHeader("Authorization", "Bearer ${mainActivity?.sessionManager?.getUserToken()}")
+            .addHeader("Authorization", "Bearer ${tokenCheck()}")
             .url(Constants.addCart+id)
             .post(body)
             .build()
@@ -205,7 +220,7 @@ class Services {
     fun removeItemFromCart(id: String): Observable<String>{
         val body = ""
         val request = Request.Builder()
-            .addHeader("Authorization", "Bearer ${mainActivity?.sessionManager?.getUserToken()}")
+            .addHeader("Authorization", "Bearer ${tokenCheck()}")
             .url(Constants.deleteCart+id)
             .delete(body.toRequestBody())
             .build()

@@ -60,6 +60,10 @@ class SessionManager(context: Context) {
         return prefs.getString(KEY_USER_FULL_NAME, null) != null
     }
 
+    fun isRem(): Boolean{
+        return prefs.getString(userToken, null) != null
+    }
+
     fun userFullName():String{
         return prefs.getString(KEY_USER_FULL_NAME,null).toString()
     }

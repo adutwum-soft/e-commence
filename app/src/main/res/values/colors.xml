@@ -13,4 +13,6 @@
     <color name="white50">#80FFFFFF</color>
     <color name="appColor">#09427d</color>
     <color name="not_selected">#636760</color>
+    <color name="lightWhite">#F5F5FF</color>
+    <color name="text_hint">#804C4B4B</color>
 </resources>
