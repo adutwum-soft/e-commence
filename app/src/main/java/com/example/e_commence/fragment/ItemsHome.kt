@@ -46,6 +46,12 @@ class ItemsHome : Fragment() {
         init()
 
         with(binding){
+            swipe.setOnRefreshListener {
+                loadCategories()
+                loadProducts()
+                swipe.isRefreshing = false
+            }
+
             searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener,
                 androidx.appcompat.widget.SearchView.OnQueryTextListener {
                 override fun onQueryTextChange(newText: String?): Boolean {
