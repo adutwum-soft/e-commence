@@ -34,5 +34,7 @@
     <string name="total">Total</string>
     <string name="checkout">Checkout</string>
     <string name="logout">Logout</string>
+    <string name="track">Track Orders</string>
+    <string name="trackMess">Hello, This is Patrick Adutwum, Testing Track orders with a button click that takes the user to a chat conversation on WhatsApp</string>
 
 </resources>

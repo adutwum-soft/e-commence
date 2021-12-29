@@ -1,6 +1,8 @@
 package com.example.e_commence.fragment
 
 import android.content.Intent
+import android.content.pm.PackageManager
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,6 +10,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.e_commence.Login
 import com.example.e_commence.MainActivity
+import com.example.e_commence.R
 import com.example.e_commence.api.Network
 import com.example.e_commence.databinding.SettingsBinding
 import com.example.e_commence.showToast
@@ -22,7 +25,7 @@ class Settings : Fragment() {
     private var _binding: SettingsBinding? = null
     private val binding get() = _binding!!
 
-    lateinit var sessionManager: SessionManager
+    private lateinit var sessionManager: SessionManager
     private val client = OkHttpClient()
     var services: Services? = null
 
@@ -79,6 +82,39 @@ class Settings : Fragment() {
                     }
                 }
             }
+
+            trackBtn.setOnClickListener {
+                openWhatsApp()
+            }
         }
+    }
+
+    private fun openWhatsApp(){
+        if (isWhatsAppInstalled()){
+            val i = Intent(Intent.ACTION_VIEW, Uri.parse("https://api.whatsapp.com/send?phone=233503247275&text=${activity?.getString(
+                R.string.trackMess)}"))
+            startActivity(i)
+        }else{
+            activity?.showToast("WhatsApp is not installed on your device")
+        }
+//        val sendIntent = Intent()
+//        sendIntent.action = Intent.ACTION_SEND
+//        sendIntent.putExtra(Intent.EXTRA_TEXT, "Hello ")
+//        sendIntent.type = "text/plain"
+//        sendIntent.setPackage("com.whatsapp");
+//        startActivity(sendIntent)
+    }
+
+    private fun isWhatsAppInstalled(): Boolean {
+        val packageManager: PackageManager = activity?.packageManager!!
+
+        var whatsappInstalled: Boolean = try {
+            packageManager.getPackageInfo("com.whatsapp", PackageManager.GET_ACTIVITIES)
+            true
+        } catch (e: PackageManager.NameNotFoundException) {
+            false
+        }
+
+        return whatsappInstalled
     }
 }
