@@ -203,6 +203,7 @@ class Services {
                 override fun onResponse(call: Call, response: Response) {
                     val data = response.body!!.string()
                     val result = JSONObject(data)
+                    print(">>> lololo >>> $result")
 
                     if (result.has("message")){
                         if (result.getJSONArray("cart").length() == 0){

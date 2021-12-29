@@ -1,9 +1,8 @@
 package com.example.e_commence
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentTransaction
 import com.example.e_commence.databinding.HomeBinding
 import com.example.e_commence.fragment.Cart
 import com.example.e_commence.fragment.History
@@ -13,7 +12,7 @@ import com.example.e_commence.utils.Services
 import com.example.e_commence.utils.SessionManager
 
 class Home : AppCompatActivity() {
-    private lateinit var binding: HomeBinding
+    lateinit var binding: HomeBinding
     lateinit var sessionManager: SessionManager
     var services: Services? = null
     var index: Int? = null

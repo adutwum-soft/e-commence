@@ -15,7 +15,7 @@ import com.example.e_commence.utils.Services
 /**
  * Created by Patrick Adutwum on 28/12/2021.
  */
-class ProductAdapter(val context: Context, private  val productItem: ArrayList<ProductObj>, val services: Services):
+class ProductAdapter(val context: Context, private  val productItem: ArrayList<ProductObj>, private val services: Services):
     RecyclerView.Adapter<ProductAdapter.ProductViewHolder>() {
     inner class ProductViewHolder(binding: ProductItemBinding): RecyclerView.ViewHolder(binding.root){
         val img = binding.img

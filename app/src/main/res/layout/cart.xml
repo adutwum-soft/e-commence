@@ -1,14 +1,166 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragment.Cart">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragment.Cart"
+    android:background="@color/white"
+    android:orientation="vertical">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolBar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="@color/white"
+        app:titleTextColor="@color/black"
+        />
 
-</FrameLayout>
+    <LinearLayout
+        android:id="@+id/cartLy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:orientation="vertical"
+        android:visibility="gone"
+        >
+        <TextView
+            android:id="@+id/myCartList"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/myCartList"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/cartRecy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:scrollbars="none"
+            android:nestedScrollingEnabled="false"
+            android:layout_marginTop="20dp"
+            />
+    </LinearLayout>
+    <RelativeLayout
+        android:id="@+id/low"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="20dp"
+        android:visibility="gone"
+        >
+        <TextView
+            android:id="@+id/subTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/subtotal"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            />
+
+        <TextView
+            android:id="@+id/subValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            tools:text="GHS490.0" />
+        <ImageView
+            android:id="@+id/dash"
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:src="@drawable/dotted"
+            android:layerType="software"
+            android:layout_below="@+id/subTxt"
+            android:layout_marginVertical="10dp"
+            />
+        <TextView
+            android:id="@+id/totalTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/total"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_below="@+id/dash"
+            android:textColor="@color/black"
+            />
+        <TextView
+            android:id="@+id/totalValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            tools:text="GHS490.0"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/dash"
+            android:textColor="@color/black"
+            />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/checkoutBtn"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/count_boarder"
+        android:visibility="gone"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textColor="@color/white"
+            android:text="@string/checkout"
+            android:textSize="18sp"
+            />
+    </RelativeLayout>
+
+    <com.github.ybq.android.spinkit.SpinKitView
+        android:id="@+id/progress"
+        style="@style/SpinKitView.Large.CubeGrid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        app:SpinKit_Color="@color/darkBlue"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        tools:visibility="gone"
+        android:elevation="20dp"
+        />
+
+    <LinearLayout
+        android:id="@+id/emptyCartLy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:visibility="gone"
+        tools:visibility="gone"
+        >
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/empty_cart"
+            android:layout_gravity="center"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/empty_cart"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/darkBlue"
+            android:textAlignment="center"
+            android:layout_gravity="center"
+            />
+    </LinearLayout>
+
+</LinearLayout>
