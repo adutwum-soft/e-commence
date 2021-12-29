@@ -1,14 +1,120 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragment.Settings">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragment.Settings"
+    android:background="#FBFAF8">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <com.github.ybq.android.spinkit.SpinKitView
+        android:id="@+id/progress"
+        style="@style/SpinKitView.Large.CubeGrid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        app:SpinKit_Color="@color/appColor"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        tools:visibility="visible"
+        android:elevation="20dp"
+        />
+
+    <RelativeLayout
+        android:id="@+id/profileLy"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="200dp"
+        android:background="@color/appColor"
+        >
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Gloria Dedewaa"
+            android:layout_centerVertical="true"
+            android:textStyle="bold"
+            android:textSize="25sp"
+            android:textAlignment="viewStart"
+            android:layout_marginHorizontal="20dp"
+            android:textColor="@color/white"
+            />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/profileLy"
+        android:layout_marginTop="-20dp"
+        >
 
-</FrameLayout>
+        <LinearLayout
+            android:id="@+id/emilLy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/boarder_settings"
+            android:layout_marginHorizontal="20dp"
+            android:elevation="8dp"
+            android:orientation="horizontal"
+            android:clickable="true"
+            >
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_margin="20dp"
+                android:src="@drawable/ic_baseline_email_24"
+                />
+            <TextView
+                android:id="@+id/email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                tools:text="email@gmail.com"
+                android:textSize="18sp"
+                android:layout_marginEnd="20dp"
+                android:ellipsize="end"
+                android:textStyle="bold"
+                />
+        </LinearLayout>
+        <RelativeLayout
+            android:id="@+id/logoutBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/boarder_settings"
+            android:layout_marginHorizontal="20dp"
+            android:elevation="8dp"
+            android:orientation="horizontal"
+            android:layout_below="@+id/emilLy"
+            android:layout_marginTop="20dp"
+            android:gravity="start"
+            android:clickable="true"
+            >
+            <ImageView
+                android:id="@+id/logoutImg"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_margin="20dp"
+                android:src="@drawable/power_settings_new_24"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/logout"
+                android:textSize="18sp"
+                android:ellipsize="end"
+                android:layout_toEndOf="@+id/logoutImg"
+                android:layout_centerVertical="true"
+                android:textStyle="bold"
+                />
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="20dp"
+                android:src="@drawable/arrow_forward_ios_24"
+                android:layout_marginStart="20dp"
+                />
+        </RelativeLayout>
+    </RelativeLayout>
+
+</RelativeLayout>
