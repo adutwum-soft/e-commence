@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:background="#FBFAF8"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        >
+        <TextView
+            android:id="@+id/listNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="1."
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="20dp"
+            />
+        <LinearLayout
+            android:id="@+id/orDLy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_toEndOf="@+id/listNumber"
+            >
+            <TextView
+                android:id="@+id/orderIdTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:text="Order ID"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                />
+            <TextView
+                android:id="@+id/orderId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="1111"
+                android:textColor="@color/text_hint"
+                android:textSize="14sp"
+                />
+        </LinearLayout>
+        <TextView
+            android:id="@+id/status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toStartOf="@+id/dateLy"
+            android:layout_marginHorizontal="20dp"
+            android:layout_centerVertical="true"
+            tools:text="paid"
+            android:textSize="14sp"
+            />
+        <LinearLayout
+            android:id="@+id/dateLy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:orientation="vertical"
+            >
+            <TextView
+                android:id="@+id/dateLb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:text="Date"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:id="@+id/date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                tools:text="GHC 10"
+                android:textColor="@color/text_hint"
+                />
+        </LinearLayout>
+
+    </RelativeLayout>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:src="@drawable/dotted"
+        android:layerType="software" />
+
+</LinearLayout>

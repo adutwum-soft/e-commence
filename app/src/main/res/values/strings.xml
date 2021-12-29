@@ -27,6 +27,7 @@
 
     <string name="myCartList">My \nCart List</string>
     <string name="empty_cart">Add product to Cart \nto view Cart</string>
+    <string name="empty_transaction">Make purchase to \nview history</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="subtotal">Subtotal</string>

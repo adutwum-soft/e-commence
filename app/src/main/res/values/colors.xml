@@ -15,4 +15,8 @@
     <color name="not_selected">#636760</color>
     <color name="lightWhite">#F5F5FF</color>
     <color name="text_hint">#804C4B4B</color>
+
+    <color name="green">#00FF00</color>
+    <color name="gold">#FFD700</color>
+    <color name="red">#FF0000</color>
 </resources>
