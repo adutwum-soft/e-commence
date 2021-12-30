@@ -9,6 +9,7 @@ import android.widget.ImageView
 import android.widget.Toast
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.snackbar.Snackbar
 import java.util.*
 
@@ -20,8 +21,9 @@ fun ImageView.loadImage(url: String){
     Glide.with(this.context).load(url).diskCacheStrategy(DiskCacheStrategy.RESOURCE).into(this)
 }
 
-fun View.snack(message: String, duration: Int = Snackbar.LENGTH_LONG) {
+fun View.snack(message: String, bottom: BottomNavigationView, duration: Int = Snackbar.LENGTH_LONG) {
     val snackBar = Snackbar.make(this, message, duration)
+    snackBar.anchorView = bottom
     snackBar.show()
 }
 

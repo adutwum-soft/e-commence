@@ -42,7 +42,7 @@ class ProductAdapter(val context: Context, private  val productItem: ArrayList<P
                 services.addCart(item.id.toString()).doOnError { it.printStackTrace() }.subscribe{
                     if (it.equals("Added to cart")){
                         (context as Home).showBadge()
-                        addToCart.snack(it)
+                        addToCart.snack(it, context.binding.bottomNav)
                     }
                 }
             }

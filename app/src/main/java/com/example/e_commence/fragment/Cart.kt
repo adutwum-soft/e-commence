@@ -141,7 +141,7 @@ class Cart : Fragment() {
             services?.removeItemFromCart(id)?.doOnError { error -> error.printStackTrace() }?.subscribe{ mess ->
                 activity?.runOnUiThread {
                     if (mess == "Item removed"){
-                        delete.snack(mess)
+                        delete.snack(mess, home?.binding?.bottomNav!!)
                         setCartView()
                     }
                 }
