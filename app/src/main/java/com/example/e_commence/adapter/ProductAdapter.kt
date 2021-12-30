@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.e_commence.Home
 import com.example.e_commence.databinding.ProductItemBinding
+import com.example.e_commence.fragment.ShareBottomSheet
 import com.example.e_commence.loadImage
 import com.example.e_commence.model.ProductObj
 import com.example.e_commence.snack
@@ -47,7 +48,15 @@ class ProductAdapter(val context: Context, private  val productItem: ArrayList<P
             }
 
             share.setOnClickListener {
+                ShareBottomSheet.let {
+                    it.desc = item.description
+                    it.price = item.price!!
+                    it.img = Constants.productImageUrl+item.image
+                    it.title = item.name
+                }
 
+                (context as Home).itemsHome.shareBottomSheet.show(context.supportFragmentManager, "sheet")
+//                (context as Home).itemsHome.setBottom(Constants.productImageUrl+item.image, item.name, item.description, item.price!!)
             }
         }
     }

@@ -29,6 +29,7 @@ class ItemsHome : Fragment() {
     var name = ""
     var home: Home? = null
     var categoryProduct: CategoryProduct = CategoryProduct()
+    var shareBottomSheet = ShareBottomSheet()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,6 +45,8 @@ class ItemsHome : Fragment() {
         // Inflate the layout for this fragment
         _binding = ItemsHomeBinding.inflate(inflater, container, false)
         init()
+
+        shareBottomSheet
 
         with(binding){
             swipe.setOnRefreshListener {

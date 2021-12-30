@@ -14,4 +14,16 @@
         <item name="android:statusBarColor" tools:targetApi="l">@color/darkBlue</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="bottomSheetBackground"
+        parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="bottomSheetStyle">@style/bottomSheetStyleWrapper</item>
+        <item name="android:windowSoftInputMode">adjustResize</item>
+    </style>
+
+    <style name="bottomSheetStyleWrapper" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/bottomsheet_boarder</item>
+    </style>
 </resources>

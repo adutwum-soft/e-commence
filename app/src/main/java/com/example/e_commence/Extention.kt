@@ -17,7 +17,7 @@ import java.util.*
  */
 
 fun ImageView.loadImage(url: String){
-    Glide.with(this.context).load(url).diskCacheStrategy(DiskCacheStrategy.SOURCE).into(this)
+    Glide.with(this.context).load(url).diskCacheStrategy(DiskCacheStrategy.RESOURCE).into(this)
 }
 
 fun View.snack(message: String, duration: Int = Snackbar.LENGTH_LONG) {
