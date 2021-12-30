@@ -79,7 +79,7 @@ class ShareBottomSheet : BottomSheetDialogFragment() {
         val uri = getLocalBitmapUri(bitmap)
         val intent: Intent = Intent().apply {
             action = Intent.ACTION_SEND
-            putExtra(Intent.EXTRA_TEXT, "check out $title, price: GHS$price description: $desc")
+            putExtra(Intent.EXTRA_TEXT, "check out $title, price: GHS${binding.priceEdit.text} description: $desc")
             putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true)
             putExtra(Intent.EXTRA_STREAM, uri)
             flags = Intent.FLAG_GRANT_READ_URI_PERMISSION;

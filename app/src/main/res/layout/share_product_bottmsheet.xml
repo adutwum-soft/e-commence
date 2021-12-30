@@ -79,12 +79,13 @@
             android:layout_height="60dp"
             android:layout_marginHorizontal="20dp"
             >
+
             <EditText
                 android:id="@+id/priceEdit"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:drawableLeft="@drawable/ic_attach_money_24"
                 android:layout_toStartOf="@+id/editImg"
+                android:drawableLeft="@drawable/ic_attach_money_24"
                 android:inputType="numberDecimal"
                 />
             <ImageView
