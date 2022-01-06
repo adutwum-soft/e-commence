@@ -35,6 +35,9 @@
     <string name="checkout">Checkout</string>
     <string name="logout">Logout</string>
     <string name="track">Track Orders</string>
+    <string name="something_went_wrong">Hmm...\nsomething went \nwrong.</string>
+    <string name="lost_connection">Looks like you lost your connection. Please check it and try again</string>
+    <string name="try_again">Try again</string>
     <string name="trackMess">Hello, This is Patrick Adutwum, Testing Track orders with a button click that takes the user to a chat conversation on WhatsApp</string>
 
 </resources>

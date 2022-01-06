@@ -29,6 +29,7 @@
         <entry key="app/src/main/res/layout/home.xml" value="0.23020833333333332" />
         <entry key="app/src/main/res/layout/items_home.xml" value="0.21614583333333334" />
         <entry key="app/src/main/res/layout/login.xml" value="0.21614583333333334" />
+        <entry key="app/src/main/res/layout/no_internet.xml" value="0.20652173913043478" />
         <entry key="app/src/main/res/layout/product_item.xml" value="0.23020833333333332" />
         <entry key="app/src/main/res/layout/settings.xml" value="0.14716312056737588" />
         <entry key="app/src/main/res/layout/share_product_bottmsheet.xml" value="0.21" />
