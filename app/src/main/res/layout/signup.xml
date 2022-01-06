@@ -68,6 +68,7 @@
         android:textColorHint="@color/white50"
         android:paddingLeft="20dp"
         android:textColor="@color/white"
+        android:inputType="phone"
         />
 
     <EditText
